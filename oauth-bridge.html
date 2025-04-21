@@ -7,8 +7,8 @@
   <script>
     window.onload = () => {
       const urlParams = new URLSearchParams(window.location.search);
-      const token = urlParams.get('access_token');
-      
+      const token = urlParams.get('access_token'); // Get the token from URL
+
       console.log("Token received:", token); // Debugging log to check if the token is passed correctly
 
       if (token) {
@@ -21,8 +21,7 @@
         window.location.href = 'https://davidraj1510.github.io/Recipe-Garden/#/auth/callback';
       } else {
         console.log("No token found. Redirecting to /auth/callback...");
-        // In case no token is found, just redirect anyway
-        window.location.href = 'https://davidraj1510.github.io/Recipe-Garden/#/auth/callback';
+        window.location.href = 'https://davidraj1510.github.io/Recipe-Garden/#/auth/callback'; // Redirect to the callback handler if no token is found
       }
     };
   </script>
