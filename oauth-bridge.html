@@ -9,12 +9,19 @@
       const urlParams = new URLSearchParams(window.location.search);
       const token = urlParams.get('access_token');
       
+      console.log("Token received:", token); // Debugging log to check if the token is passed correctly
+
       if (token) {
-        // Store token in localStorage or sessionStorage
+        // Store token in localStorage
         localStorage.setItem('access_token', token);
-        // Immediately redirect to /#/auth/callback
+        console.log("Token stored in localStorage:", token); // Debugging log to check if token is stored
+
+        // Redirect to /#/auth/callback after storing the token
+        console.log("Redirecting to /auth/callback...");
         window.location.href = 'https://davidraj1510.github.io/Recipe-Garden/#/auth/callback';
       } else {
+        console.log("No token found. Redirecting to /auth/callback...");
+        // In case no token is found, just redirect anyway
         window.location.href = 'https://davidraj1510.github.io/Recipe-Garden/#/auth/callback';
       }
     };
