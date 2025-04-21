@@ -8,17 +8,20 @@
     window.onload = () => {
       const urlParams = new URLSearchParams(window.location.search);
       const token = urlParams.get('access_token'); // Get the token from URL
-  
+
+      console.log("Token received:", token); // Debugging log to check if the token is passed correctly
+
       if (token) {
         // Store token in localStorage
         localStorage.setItem('access_token', token);
-  
-        // Redirect to your app’s profile page (or homepage, depending on your flow)
-        window.location.href = 'https://davidraj1510.github.io/Recipe-Garden/#/profile'; // Change this as needed
+        console.log("Token stored in localStorage:", token); // Debugging log to check if token is stored
+
+        // Redirect to /#/auth/callback after storing the token
+        console.log("Redirecting to /auth/callback...");
+        window.location.href = 'https://davidraj1510.github.io/Recipe-Garden/#/auth/callback';
       } else {
-        // If no token is found, handle the error appropriately
-        console.log("No token found. Redirecting to login page...");
-        window.location.href = 'https://davidraj1510.github.io/Recipe-Garden/#/login'; // Or any other page for errors
+        console.log("No token found. Redirecting to /auth/callback...");
+        window.location.href = 'https://davidraj1510.github.io/Recipe-Garden/#/auth/callback'; // Redirect to the callback handler if no token is found
       }
     };
   </script>
