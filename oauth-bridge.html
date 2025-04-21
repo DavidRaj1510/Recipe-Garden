@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OAuth Bridge</title>
+  <script>
+    window.onload = () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const token = urlParams.get('access_token');
+      
+      if (token) {
+        // Store token in localStorage
+        localStorage.setItem('access_token', token);
+        // Redirect to /#/auth/callback
+        window.location.href = 'https://davidraj1510.github.io/Recipe-Garden/#/auth/callback';
+      } else {
+        window.location.href = 'https://davidraj1510.github.io/Recipe-Garden/#/auth/callback';
+      }
+    };
+  </script>
+</head>
+<body>
+  <div>Redirecting...</div>
+</body>
+</html>
