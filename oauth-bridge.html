@@ -1,33 +1,19 @@
+<!-- public/oauth-bridge.html -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OAuth Bridge</title>
-  <script>
-    window.onload = () => {
-      const urlParams = new URLSearchParams(window.location.search);
-      const token = urlParams.get('access_token');
-      
-      console.log("Token received:", token); // Debugging log to check if the token is passed correctly
-
-      if (token) {
-        // Store token in localStorage
-        localStorage.setItem('access_token', token);
-        console.log("Token stored in localStorage:", token); // Debugging log to check if token is stored
-
-        // Redirect to /#/auth/callback after storing the token
-        console.log("Redirecting to /auth/callback...");
-        window.location.href = 'https://davidraj1510.github.io/Recipe-Garden/#/auth/callback';
-      } else {
-        console.log("No token found. Redirecting to /auth/callback...");
-        // In case no token is found, just redirect anyway
-        window.location.href = 'https://davidraj1510.github.io/Recipe-Garden/#/auth/callback';
-      }
-    };
-  </script>
-</head>
-<body>
-  <div>Redirecting...</div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>OAuth Bridge</title>
+    <script>
+      // Wait for Supabase to write the session to storage, then redirect
+      window.onload = function () {
+        setTimeout(function () {
+          window.location.href = "https://davidraj1510.github.io/Recipe-Garden/";
+        }, 500);
+      };
+    </script>
+  </head>
+  <body>
+    Redirecting...
+  </body>
 </html>
