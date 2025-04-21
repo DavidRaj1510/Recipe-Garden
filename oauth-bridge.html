@@ -6,15 +6,13 @@
   <title>OAuth Bridge</title>
   <script>
     window.onload = () => {
-      const urlParams = new URLSearchParams(window.location.hash.slice(1)); // Access the fragment identifier
-      const accessToken = urlParams.get('access_token');
-      const refreshToken = urlParams.get('refresh_token');
+      const urlParams = new URLSearchParams(window.location.search);
+      const token = urlParams.get('access_token');
       
-      if (accessToken && refreshToken) {
-        // Store both tokens in localStorage
-        localStorage.setItem('access_token', accessToken);
-        localStorage.setItem('refresh_token', refreshToken);
-        // Redirect to /#/auth/callback
+      if (token) {
+        // Store token in localStorage or sessionStorage
+        localStorage.setItem('access_token', token);
+        // Immediately redirect to /#/auth/callback
         window.location.href = 'https://davidraj1510.github.io/Recipe-Garden/#/auth/callback';
       } else {
         window.location.href = 'https://davidraj1510.github.io/Recipe-Garden/#/auth/callback';
