@@ -64,13 +64,3 @@ Uses OpenAI's GPT API to:
   - `/auth` (Login & Register)
 
 ---
-
-## ⚙️ Setup
-
-To get started with the project locally:
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/DavidRaj1510/Recipe-Garden.git
-   cd Recipe-Garden
